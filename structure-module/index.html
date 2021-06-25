@@ -1,0 +1,521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>1. Magento là gì ? - Magento 2 Cookbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-magento-la-gi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Magento 2 Cookbook" class="md-header__button md-logo" aria-label="Magento 2 Cookbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Magento 2 Cookbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Magento là gì ?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Magento 2 Cookbook" class="md-nav__button md-logo" aria-label="Magento 2 Cookbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Magento 2 Cookbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        DI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          DI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DI/di.xml.html" class="md-nav__link">
+        di.xml
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Structure module
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Structure module" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Structure module
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1. Magento là gì ?
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        1. Magento là gì ?
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-tinh-nang-chinh-co-san-cua-magento-o-phien-ban-open-source" class="md-nav__link">
+    Các tính năng chính có sẵn của Magento ở phiên bản Open Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cac-tinh-nang-chinh-co-san-cua-magento-o-phien-ban-open-source" class="md-nav__link">
+    Các tính năng chính có sẵn của Magento ở phiên bản Open Source
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="1-magento-la-gi">1. Magento là gì ?</h1>
+<p>Magento là một mã nguồn mở tạo web thương mại điện tử đã được ra mắt vào ngày 31 tháng 3 năm 2008. Magento được phát triển bởi Varien, với sự giúp đỡ từ các lập trình viên trong cộng đồng mã nguồn mở, nhưng chỉ được sở hữu bởi Magento Inc. Magento được xây dựng trên nền tảng Zend Framework. Nó sử dụng các mô hình thực thể thuộc tính giá trị cơ sở dữ liệu (EAV – entity-attribute-value) để lưu trữ dữ liệu.</p>
+<p>Magento Community Edition (viết tắt là Magento CE) là phiên bản miễn phí của Magento có sẵn.</p>
+<p>Theo ước tính của W3Techs vào tháng 4 năm 2014, Magento được sử dụng trên 1.0% tổng số website[3], tính đến năm 2016, con số tổng lượng website sử dụng Magento đã lên tới hơn 250,000 websites</p>
+<p>Theo wiki.
+Ở Việt Nam hiện nay có khá nhiều website thương mại điện tử lớn tại Việt Nam như, PNJ Shopping, Trung nguyên ... tính đến 15/2/2021 cơ khoảng 480  website Magento cả lớn nhỏ tại Việt Nam theo <a href="https://trends.builtwith.com/websitelist/Magento/Vietnam">Builtwith.com</a></p>
+<h2 id="cac-tinh-nang-chinh-co-san-cua-magento-o-phien-ban-open-source">Các tính năng chính có sẵn của Magento ở phiên bản Open Source</h2>
+<ul>
+<li>Các tính năng quản lý toàn bộ site Magento ecommerce</li>
+<li>Chức năng checkout, thanh toán, vận chuyển</li>
+<li>Tối ưu hóa tìm kiếm trên search engine</li>
+<li>Phân tích và báo cáo</li>
+<li>Các chức năng hỗ trợ tiếp thị, quảng cáo</li>
+<li>Chức năng quản lý bán hàng</li>
+<li>Quản lý khách hàng, dịch vụ khách hàng</li>
+<li>Quản lý danh mục sản phẩm, quản lý tồn kho</li>
+<li>Quản lý sản phẩm</li>
+</ul>
+<p>Trên thực tế để có thể đưa vào sử dụng phù hợp với từng doanh nghiệp , lập trình viên cần phải custom rất nhiều như Phát triển, tích hợp, tùy biến thêm, tích hợp thanh toán....</p>
+<h1 id="2-module">2. Module</h1>
+<p>Module là một nhóm logic - 1 thư mục chứa các blocks, controllers, helpers, models -  có liên quan đến một tính năng cụ thể . Để phù hợp với cam kết của Magento về module  tối ưu, một module chỉ nên gói gọn một tính năng và ít phụ thuộc vào module khác nhất có thể.</p>
+<p>Các module và theme là các đơn vị customization trong Magento. Module cung cấp các tính năng kinh doanh, với logic hỗ trợ, trong khi theme ảnh hưởng để UI,UX . Cả hai thành phần đều có vòng đời cho phép chúng được cài đặt, xóa và vô hiệu hóa. Từ quan điểm của cả người bán và nhà phát triển phần mở rộng , Module được xem như  đơn vị hạt nhân của Magento.</p>
+<h3 id="chuc-nang-cua-module">Chức năng của module</h3>
+<p>Mục đích củamodule là cung cấp các tính năng sản phẩm cụ thể bằng cách triển khai chức năng mới hoặc mở rộng chức năng của các module khác. Mỗi module được thiết kế để hoạt động độc lập, do đó, việc bao gồm hoặc loại trừ một module cụ thể thường không ảnh hưởng đến chức năng của các module khác.</p>
+<h3 id="vi-tri-cua-module">Vị trí của Module</h3>
+<p>Các Module thường nằm trong  thư mục vendor của cài đặt Magento, trong thư mục có định dạng tuân thủ PSR-0 sau:, vendor/<vendor>/<type>-<module-name>trong đó <type>có thể là một trong các giá trị sau:
+*  <em>module</em> - for modules (module-customer-import-export)
+* <em>theme</em> - for frontend and admin themes (theme-frontend-luma or theme-adminhtml-backend)
+* <em>language</em> - for language packs (language-de_de)</p>
+<p>Chúng ta có thể xem thử 1 module Catalog là các chứng năng liên quan đến product:
+    <img alt="" src="https://images.viblo.asia/0ebf50c5-2c50-4a9b-8387-6c3983217600.png" />
+https://devdocs.magento.com/guides/v2.4/architecture/archi_perspectives/components/modules/mod_intro.html?itm_source=devdocs&amp;itm_medium=search_page&amp;itm_campaign=federated_search&amp;itm_term=module</p>
+<h1 id="thanh-phan-cua-mot-module">Thành phần của một module</h1>
+<h3 id="cac-thu-muc-thuong-co-trong-1-module">Các thư mục thường có trong 1 module</h3>
+<p><strong>registration.php</strong>:  mỗi module phải có 1 file <em>registration.php</em> trong thư mục gốc của module để khai báo module.</p>
+<p><strong>Block</strong>: bao gồm các views classes PHP như một phần module logic implementation mô hình Model - View - Controller (MVC) triển khai dọc.
+     <code>Block</code> là một trong những class elements đầu tiên trong cấu trúc của layouts Magento. Mỗi trang trong Magento được trang trí bởi <code>Layouts</code>  files và nội dung được lấp đầy bởi <strong>Blocks</strong> của các module khác nhau. Các Magento blocks là rất mạnh mẽ và linh hoạt để thêm các content của bạn vào các layout đã có. Mặt khác, bạn cũng có thể sử dụng các file layout XML để dễ dàng loại bỏ hoặc định vị lại bất kỳ blocks hiện có.</p>
+<p>Magento chia block thành hai loại : <strong>structure block</strong> và <strong>content block.</strong></p>
+<ul>
+<li><strong><em>Structure Block</em></strong>: đây là những block được tạo ra để định dạng vị trí cho những block khác trong một page . Cùng xem ví dụ với trang chủ của magento default sử dụng three column layout.</li>
+</ul>
+<p>Ví dụ, <code>Header</code>, <code>Footer</code>, <code>Left</code> và <code>Right</code> là các structural blocks trong Magento. <strong>Content blocks</strong> được gán cho các vị trí cấu trúc khác nhau của layout của trang Magento, từ đó hiển thị nội dung thực tế của các khối content blocks.
+Footer</p>
+<ul>
+<li><strong><em>Content Block</em></strong>: đây là những block nội dung , chúng được hiển thị bên trong những structure block . Mỗi content block thường hiển thị một khối nội dung nào đó thông qua những file template và chèn vào những block cha là structure block .</li>
+</ul>
+<p>Hãy xem right column có những content block nào.</p>
+<p><code>minicart</code>, <code>Recently</code>,<code>viewed product</code>, <code>Newsletter subscription</code>, <code>block</code>, <code>Poll</code></p>
+<p>Khi nhận được một request từ người dùng để hiển thị một page :</p>
+<p>Magento sẽ load những vùng cấu trúc
+Mỗi vùng cấu trúc có những content block . Magento sẽ tập hợp những block này lại và gán cho các structure block tương ứng theo layout để xử lý đầu ra .
+Cuối cùng hệ thống sẽ trả lại kết quả sau cùng cho trình duyệt phần nội dung đã được định dạng vị trí .</p>
+<p>Chúng ta cũng có thể tự custom Block.</p>
+<p><strong>Controller</strong>:includes các controller classes  PHP như là một phần của việc implementation  MVC logic </p>
+<p><code>Controller</code> là một phần quan trọng trong module nói riêng và mô hình MVC nói chung. Nhiệm vụ của <code>controller</code> là nhận request, xử lý và render page. Có thể có một hoặc nhiều file trong thư mục <code>controller</code> của module. Có hai loại <code>controller</code> là <code>frontend controller</code> và<code>backend controller</code>. Về bản chất thì 2 loại này giống nhau chỉ khác là ở <code>backend controller</code> sẽ có thêm một method để kiểm tra quyền truy cập. </p>
+<p>có thể tham khảo tại đây chi tiết hơn về cách tạo vào overide controller https://www.mageplaza.com/magento-2-module-development/how-to-create-controllers-magento-2.html</p>
+<p><strong>etc</strong>: includes  các file configuration; </p>
+<ul>
+<li>
+<p><strong>module.xml</strong>:   là file bắt buộc cần có xác định thông tin cơ bản về component, ví dụ:  component dependencies and version number.   Version sẽ được sử dụng để xác định schema  và cập nhật dữ liệu sau khi chúng ta update dữ liệu.</p>
+</li>
+<li>
+<p><strong>di.xml</strong>  : config các  dependencies  được inject bởi các object manager . Chúng ta cũng có thể chỉ định cài đặt cấu hình sensitive sử dụng di.xml.</p>
+</li>
+</ul>
+<p><strong>Model</strong>: includes các classes model PHP như một phần của việc triển khai theo chiều dọc MVC logic mô-đun.</p>
+<p>Trong Magento 2 Models sẽ chịu trách nhiệm làm việc với database, và được chia thành ba phần là Model, Resource Model và Collection. Được sử dụng để làm việc với các hoạt động CRUD(create, read, update, delete), bạn không cần phải viết bất kỳ một dòng code SQL nào nữa.</p>
+<p><strong>Setup</strong>: bao gồm các lớp cho  module database structure  và setup data. Những dữ liệu này được gọi khi installing hoặc upgrading.</p>
+<p>Trong một vài trường hợp có lẽ cần phải  cập nhật cơ sở dữ liệu, thêm một bảng mới hoặc thêm một vài field trong product form… Để làm được điều này, các setup script  sẽ giúp chúng ta.</p>
+<ul>
+<li>
+<p><strong>InstallSchema</strong>: Tập lệnh này sẽ chạy khi lần đầu cài đặt module được dùng để thiết lập cấu trúc database.</p>
+</li>
+<li>
+<p><strong>InstallData</strong>: Tập lệnh này sẽ chạy khi lần đầu cài đặt module được dùng để khởi tạo dữ liệu cho một bảng trong database.</p>
+</li>
+<li>
+<p><strong>UpgradeSchema</strong>: Tập lệnh này sẽ chạy khi nâng cấp module được dùng để thiết lập cấu trúc database.</p>
+</li>
+<li>
+<p><strong>UpgradeData</strong>: Tập lệnh này sẽ chạy khi nâng cấp module được dùng để khởi tạo dữ liệu cho một bảng trong database.</p>
+</li>
+<li>
+<p><strong>Recurring</strong></p>
+</li>
+<li>
+<p><strong>Uninstall</strong></p>
+</li>
+</ul>
+<h3 id="cac-thu-muc-bo-sung">Các thư mục bổ sung</h3>
+<p>Các thư mục này có thể được thêm vào để configuration hoặc các chức năng hỗ trợ trợ của các mục khác như bản localization,plugin-ins, and layout files.</p>
+<p><strong>Api</strong>: bao gồm bất kỳ class PHP nào được tiếp xúc với API.</p>
+<p>Nó Chứa tập hợp code mà các nhà phát triển bên thứ ba có thể gọi, implement, or build as a plug-in.. Magento đảm bảo rằng code này sẽ không thay đổi trong các bản phát hành tiếp theo mà không có sự thay đổi phiên bản lớn.
+Các giao diện công khai cho một module được đánh dấu bằng chú thích @api.</p>
+<p>Các phương thức lưu trữ của Magento 2 có thể dễ dàng được hiển thị dưới dạng API resources, làm cho chúng có giá trị để tích hợp với hệ thống của bên thứ ba hoặc các phiên bản headless Magento instances</p>
+<p><strong>Console</strong>: bao gồm các lệnh CLI.</p>
+<p><strong>Cron</strong>: define các cron job.</p>
+<p><strong>CustomerData</strong>: các section files.</p>
+<p><strong>Helper</strong>: bao gồm chức năng tổng hợp.</p>
+<p><strong>i18n</strong>:  lưu các file translate đa ngôn ngữ</p>
+<p><strong>Observer</strong>:  nơi exec các commands và listener.</p>
+<p><strong>Plugin</strong>: includes bất kì plugin nào cần</p>
+<p><strong>UI</strong>: generation file. </p>
+<p><strong>view</strong>: bao gồm các file view, containing static view files, email templates, design templates, and layout files.</p>
+<p>Trên đây mình đã trình  bày sơ qua về cấu trúc 1 module magento để hiểu rõ hơn trong phần sau mình sẽ giới thiệu đến các bạn cách tạo 1 module trong magento .</p>
+<h3 id="nguon-tham-khao">Nguồn tham khảo</h3>
+<p>https://devdocs.magento.com/ https://www.mageplaza.com/magento-2-module-development/</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../DI/di.xml.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: di.xml" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              di.xml
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>

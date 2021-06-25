@@ -1,0 +1,650 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>di.xml - Magento 2 Cookbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dixml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Magento 2 Cookbook" class="md-header__button md-logo" aria-label="Magento 2 Cookbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Magento 2 Cookbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              di.xml
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Magento 2 Cookbook" class="md-nav__button md-logo" aria-label="Magento 2 Cookbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Magento 2 Cookbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        DI
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          DI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          di.xml
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="di.xml.html" class="md-nav__link md-nav__link--active">
+        di.xml
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-dixml-nam-o-au" class="md-nav__link">
+    File di.xml nằm ở đâu ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#khi-nao-chung-ta-co-the-su-dung-dixml" class="md-nav__link">
+    Khi nào chúng ta có thể sử dụng di.xml ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preference" class="md-nav__link">
+    &lt;preference&gt;
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugin" class="md-nav__link">
+    Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    &lt;type&gt;
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualtype" class="md-nav__link">
+    &lt;virtualType&gt;
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Structure module
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Structure module" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Structure module
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structure-module/index.html" class="md-nav__link">
+        1. Magento là gì ?
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-dixml-nam-o-au" class="md-nav__link">
+    File di.xml nằm ở đâu ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#khi-nao-chung-ta-co-the-su-dung-dixml" class="md-nav__link">
+    Khi nào chúng ta có thể sử dụng di.xml ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preference" class="md-nav__link">
+    &lt;preference&gt;
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugin" class="md-nav__link">
+    Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    &lt;type&gt;
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtualtype" class="md-nav__link">
+    &lt;virtualType&gt;
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="dixml">di.xml</h1>
+<p><strong>di.xml</strong>  (<strong><em>Dependency Injection</em></strong>) là một tập tin quan trọng trong Magento 2, được dùng để khai báo các phụ thuộc của module trong Magento 2.</p>
+<p>Magento 2 sử dụng Dependency Injection để thay thế chức năng được cung cấp bởi Mage class trong Magento 1.x.</p>
+<p><em>Để hiểu được Dependency Injection là gì có thể tham khảo bài viết</em> https://viblo.asia/p/dependency-injection-hoat-dong-the-nao-trong-laravel-3Q75wD3JKWb</p>
+<h2 id="file-dixml-nam-o-au">File di.xml nằm ở đâu ?</h2>
+<p>Mỗi module sẽ có 1 tập tine di.xml ở gobal và area. Magento đọc tất cả các file di.xml khai báo trong hệ thống vàmerges tất cả chúng lại với nhau bằng cách nối tất cả các nodes. Các nodes ở đây chính là các thẻ như <code>preference</code>, <code>type</code>, <code>virtualType</code>, <code>Plugin</code></p>
+<p>Magento sẽ load cấu hình của những tập tin di.xml có trong cái đường dẫn sau:</p>
+<ol>
+<li>Tập tin khởi tạo (Initial) (<code>app/etc/di.xml</code>)</li>
+<li>Tập tin chung (global) của các modules (<code>&lt;moduleDir&gt;/etc/di.xml</code>)</li>
+<li>Tập tin riêng cho mỗi thành phần con (<code>&lt;moduleDir&gt;/etc/&lt;area&gt;/di.xml</code>)</li>
+</ol>
+<h2 id="khi-nao-chung-ta-co-the-su-dung-dixml">Khi nào chúng ta có thể sử dụng di.xml ?</h2>
+<ul>
+<li>Để viết lại, ghi đè 1 class với  preference node</li>
+<li>Thay thế các đối số  trong constructor của class hiện có với arguments.</li>
+<li>Sử dụng các plugin dể thực hiện 1 số công việc before, after and around của function.</li>
+<li>Sử dụng virtualTypes tạo 1 class con của class khác  với virtualType node.</li>
+</ul>
+<h2 id="preference"><code>&lt;preference&gt;</code></h2>
+<pre><code class="language-php">&lt;config  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;&gt;
+    &lt;preference for=&quot;Magento\Checkout\Block\Onepage\Success&quot; type=&quot;ExampleMagento\OverrideExample\Block\Onepage\CheckoutSuccess&quot; /&gt;
+&lt;/config&gt;
+</code></pre>
+<p><strong>preference</strong> dùng để ghi đè(override) một class cụ thể. Ở đoạn code trên chúng ta có thể hiểu class <code>CheckoutSuccess</code> sẽ ghi đè lên class <code>Success</code>. Điều này nói cho Magento biết rằng những nơi nào có khởi tạo class <code>Success</code> thì hãy thay thế bằng class <code>CheckoutSuccess</code>.</p>
+<p><em>preference không chỉ được dùng cho</em> <code>Interface</code>. Chúng có thể sử dụng cho bất cứ class nào mà bạn muốn. Nhưng cách này thì không được khuyến khích. Cách làm này có thể gây ra xung đột trong hệ thống và làm giảm khả năng nâng cấp của hệ thống . Nên thường sử dụng <code>plugin</code> hoặc <code>events</code>, nếu các cách còn lại không được thì mới sử dụng <code>preference</code>.</p>
+<p>Ví dụ dưới đây ghi đè method <code>isVisible</code> từ  class<code>Magento\Checkout\Block\Onepage\Success</code></p>
+<pre><code class="language-php">namespace ExampleMagento\OverrideExample\Block\Onepage;
+
+class CheckoutSuccess extends \Magento\Checkout\Block\Onepage\Success
+{
+    /**
+     * Constructor Modification
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Magento\Checkout\Model\Session $checkoutSession
+     * @param \Magento\Sales\Model\Order\Config $orderConfig
+     * @param \Magento\Framework\App\Http\Context $httpContext
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Checkout\Model\Session $checkoutSession,
+        \Magento\Sales\Model\Order\Config $orderConfig,
+        \Magento\Framework\App\Http\Context $httpContext,
+        array $data = []
+    ) {
+        parent::__construct(
+            $context,
+            $checkoutSession,
+            $orderConfig,
+            $httpContext,
+            $data
+        );
+    }
+
+    /**
+     * Is order visible
+     *
+     * @param Order $order
+     * @return bool
+     */
+    protected function isVisible(Order $order)
+    {
+        # Write your custom logic here.
+        return !in_array(
+            $order-&gt;getStatus(),
+            $this-&gt;_orderConfig-&gt;getInvisibleOnFrontStatuses()
+        );
+    }
+}
+</code></pre>
+<h2 id="plugin">Plugin</h2>
+<pre><code class="language-php">&lt;type name=&quot;Magento\RelatedProductGraphQl\Model\Resolver\Batch\CrossSellProducts&quot;&gt;
+        &lt;plugin name=&quot;not_show_product_disable_plugin&quot; type=&quot;ExampleMagento\OrderAPI\Plugin\FilterEnabledCrossSellProducts&quot; sortOrder=&quot;1&quot; disabled=&quot;false&quot; /&gt;
+    &lt;/type&gt;
+</code></pre>
+<p>Plugin thường được sử dụng nhiều. Sử dụng để tác động đến hành vi của một class hay method bằng cách chặn lệnh gọi đến method ban đầu và run code của chúng ta. Có ba loại plugin là
+* <strong>before - beforeDispatch()</strong>
+* <strong>around - aroundDispatch()</strong>
+* <strong>after - afterDispatch()</strong></p>
+<p>Ví dụ như trong đoạn code trên mình sẽ ghi đè lại method <code>resolve</code> trong class <code>Magento\RelatedProductGraphQl\Model\Resolver\Batch\CrossSellProducts</code> để không lấy ra những  <code>product</code> có <em>status là disable.</em></p>
+<pre><code class="language-php">&lt;?php
+
+namespace ExampleMagento\OrderAPI\Plugin;
+
+use Magento\Framework\GraphQl\Query\Resolver\BatchResponse;
+use Magento\Catalog\Model\Product\Attribute\Source\Status;
+
+class FilterEnabledCrossSellProducts
+{
+    public function afterResolve(
+        \Magento\RelatedProductGraphQl\Model\Resolver\Batch\CrossSellProducts $subject,
+        BatchResponse $result,
+        $context,
+        $field,
+        $requests
+    ) {
+        $newResult = new BatchResponse();
+        /** @var \Magento\Framework\GraphQl\Query\Resolver\BatchRequestItemInterface $request */
+        foreach ($requests as $request) {
+            $products = $result-&gt;findResponseFor($request);
+
+            foreach ($products as $key =&gt; $productData) {
+                if ($productData['status'] == Status::STATUS_DISABLED) {
+                    unset($products[$key]);
+                }
+            }
+
+            $newResult-&gt;addResponse($request, $products);
+        }
+
+        return $newResult;
+    }
+}
+</code></pre>
+<h2 id="type"><code>&lt;type&gt;</code></h2>
+<pre><code class="language-php">&lt;type name=&quot;Magento\Customer\Model\ResourceModel\Group&quot; shared=&quot;false&quot;&gt;
+    &lt;arguments&gt;
+        &lt;argument name=&quot;groupManagement&quot; xsi:type=&quot;object&quot;&gt;Magento\Customer\Api\GroupManagementInterface\Proxy&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;
+
+</code></pre>
+<p>Ở đây chúng ta có thể hiểu rằng chúng ta đang tạo mới một đối tượng có tên là <code>groupManagement</code> với class là <code>Proxy</code> như là một đối số, và chúng ta sẽ truyền cái đối số này vào contructor của class <code>Group</code>.</p>
+<p>Ở đây chúng ta cũng có thể thay thế một đối số trong contructor của một class. Để các bạn có một cái nhìn tổng quan hơn thì chúng ta cùng xem ví dụ đơn giản như sau:
+Giả sử tôi có một class có tên là ViMagento\HelloWorld\Block\Index và trong contructor của tôi đang có một biến $test = 1 như đoạn code bên dưới:</p>
+<pre><code class="language-php">protected $test;
+
+    public function __construct($test= 1)
+    {
+        $this-&gt;test = $test;
+    }
+</code></pre>
+<p>Biến test đang bằng 1 và sử dụng thẻ type trong di.xml để thay thế đối số này thành 2 chẳng hạn thì chúng ta làm như thế nào phải làm sao.</p>
+<pre><code class="language-php"> &lt;type name=&quot;ViMagento\HelloWorld\Block\Index&quot;&gt;
+    &lt;arguments&gt;
+        &lt;argument name=&quot;test&quot; xsi:type=&quot;string&quot;&gt;2&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/type&gt;
+</code></pre>
+<p>Chỉ cần khai báo một file di.xml,  sử dụng thẻ type và truyền vào class mà mình muốn thay đổi đối số. Sau đó sử dụng arguments khai báo một biến là test trùng với biến ở contructor mà mình muốn thay thế có giá trị là 2 và kiểu dữ liệu là string. Đó là cách mà thẻ type trong tập tin di.xml hoạt động.</p>
+<h2 id="virtualtype"><code>&lt;virtualType&gt;</code></h2>
+<p>virtualType tạo một class ảo cũng giống như tạo một lớp con cho một lớp hiện có. Hay nói cách khác virtualType có thể dùng để tạo một class con của một class khác mà không làm ảnh hưởng đến class đó.</p>
+<pre><code class="language-php">&lt;virtualType name=&quot;Magento\Core\Model\Session\Storage&quot; type=&quot;Magento\Framework\Session\Storage&quot;&gt;
+    &lt;arguments&gt;
+        &lt;argument name=&quot;namespace&quot; xsi:type=&quot;string&quot;&gt;core&lt;/argument&gt;
+    &lt;/arguments&gt;
+&lt;/virtualType&gt;
+</code></pre>
+<p>Đoạn code trên đã sử dụng virtualType để tạo một class con Magento\Core\Model\Session\Storage của class cha là Magento\Framework\Session\Storage. Giống như class Magento\Core\Model\Session\Storage kế thừa từ class Magento\Framework\Session\Storage và nó tất cả những đặc tính của class cha vậy.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome to MkDocs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome to MkDocs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../structure-module/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: 1. Magento là gì ?" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              1. Magento là gì ?
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+  </body>
+</html>
